@@ -12,30 +12,90 @@ a,a:focus,a:hover{text-decoration:none}blockquote,pre{border-color:rgba(120,130,
 /**
  * Featherlight - ultra slim jQuery lightbox
  * Version 1.7.13 - http://noelboss.github.io/featherlight/
- *
  * Copyright 2018, Noël Raoul Bossart (http://www.noelboss.com)
  * MIT Licensed.
 **/
 html.with-featherlight{overflow:hidden}.featherlight{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;text-align:center;white-space:nowrap;cursor:pointer;background:#333;background:rgba(0,0,0,0)}.featherlight:last-of-type{background:rgba(0,0,0,.8)}.featherlight:before{content:'';display:inline-block;height:100%;vertical-align:middle}.featherlight .featherlight-content{position:relative;text-align:left;vertical-align:middle;display:inline-block;overflow:auto;padding:25px 25px 0;border-bottom:25px solid transparent;margin-left:5%;margin-right:5%;max-height:95%;background:#fff;cursor:auto;white-space:normal}.featherlight .featherlight-inner{display:block}.featherlight link.featherlight-inner,.featherlight script.featherlight-inner,.featherlight style.featherlight-inner{display:none}.featherlight .featherlight-close-icon{position:absolute;z-index:9999;top:0;right:0;line-height:25px;width:25px;cursor:pointer;text-align:center;font-family:Arial,sans-serif;background:#fff;background:rgba(255,255,255,.3);color:#000;border:0;padding:0}.featherlight .featherlight-close-icon::-moz-focus-inner{border:0;padding:0}.featherlight .featherlight-image{width:100%}.featherlight-iframe .featherlight-content{border-bottom:0;padding:0;-webkit-overflow-scrolling:touch}.featherlight iframe{border:0}.featherlight *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}@media only screen and (max-width:1024px){.featherlight .featherlight-content{margin-left:0;margin-right:0;max-height:98%;padding:10px 10px 0;border-bottom:10px solid transparent}}@media print{html.with-featherlight>*>:not(.featherlight){display:none}}
 
-/* jsson-tree */
+/**
+ * json-tree
+ * Copyright (c) 2013 Leonardo Menezes
+ * https://github.com/lmenezes/json-tree
+ * MIT Licensed.
+ */
 .jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
  
 
-/*[bootstrap overrides]*/
-.text-md {
-	font-size: 1rem !important;
-} 
+body.testview:not(.dark) {
+}
+body.testview:not(.dark) .box {
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+body.testview:not(.dark) .card {
+	border: 1px solid #eee;
+	border-radius: 5px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.feature {
+	padding: 70px 120px 80px;
+	margin-bottom: 0;
+}
+h6 {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+.r-img {
+    width: 35px;
+    height: 32px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+}
+.dark .r-img {
+	border-color: #1e2835;
+}
+.pointer {
+	cursor: pointer;
+}
+.feature.closed .scenario {
+	display: none !important;
+}
+.attr-x + h6 {
+	margin-top: 20px;
+}
+body:not(.dark) .attr-x > span {
+    background: #eee;
+    padding: 5px 10px;
+}
+.attr-x i {
+	
+}
+.runtime-table {
+	margin-top: 10px;
+	margin-bottom: 0 !important;
+	margin-left: 30px;
+	width: 98%;
+}
+div.st {
+	font-family: Consolas;
+	font-size: 12px;
+	margin-bottom: 0 !important;
+}
+.ts {
+	text-transform: uppercase;
+}
+.card {
+	background-color: transparent;	
+}
+.scenario h6 {
+    font-size: 15px;
+}
 pre {
-	color: rgb(33, 37, 41) !important;
-	padding: .75rem;
+	padding: 10px 0;
+	background-color: transparent;
 }
-.table td {
-	vertical-align: middle;
-}
-.hr {
-	margin: 20px -20px 25px;
-}
+
 #content-aside > div {
 	width: 500px;
 }
@@ -44,9 +104,10 @@ pre {
 	top: 12px;
 	background-color: transparent;
 	border: none;
-	color: #fff;
 }
-
+.step {
+	margin-left: 10px;
+}
 .nav-link i:first-child {
 	margin-right: 5px;
 }
@@ -63,45 +124,10 @@ pre {
 }
 .sl-icon > i {
 	font-size: 10px;
+	top: -1px;
 }
 .dropdown-item:first-child {
     margin-top: 8px;
-}
-
-/*[testcontent]*/
-body:not(.dark) .sn, body:not(.dark) .badge {
-	color: rgba(70,90,110,.85);
-}
-.step {
-	color: #000;
-}
-#tcp h5 {
-	font-size: 16px;
-}
-.child,.node {
-	background: transparent !important;
-}
-
-/*[bdd]*/
-.scenario > div {
-	background-color: transparent;
-}
-.scenario h6 {
-	font-size: 15px;
-}
-.scenario .step {
-	line-height: 1.5rem;
-}
-.scenario .step {
-	padding: 5px 0;
-}
-.step-list {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.scenario pre {
-	background: transparent;
-	margin: 0;
 }
 
 /*category,exception,attr*/
@@ -116,52 +142,94 @@ body:not(.dark) .sn, body:not(.dark) .badge {
 	display: table-row;
 	animation-duration: 1s;
 }
-
-/*[darktheme]*/
-.dark {
-	color: rgba(180,200,220,.95);
+#content-aside > div {
+    width: 500px;
 }
-.dark .card {
-	background-color: transparent;
+.item-meta .badge {
+    font-size: 11px;
 }
-.dark .badge.grey {
-	color: #ccc;
-	background: #673ab7;
+body.dark .avatar {
+    color: white;
 }
 
-/*[status]*/
-#status-col {
-	width: 60px;
+/* status */
+body:not(.dark) div.step {
+	color: #000;
 }
-.fail, .fatal {
-	background: #e57373;
+div.step.pass,div.step.skip,div.step.fail,div.step.warning,div.step.error {
+	padding: 5px 15px;
 }
-.text-fail {
-	color: #e57373 !important;
-	text-transform: uppercase;
+.item-meta .badge {
+    font-size: 10px;
 }
-.pass {
-	background: #9ccc65;
+.avatar {
+	color: rgba(0, 0, 0, 0.85) !important;
 }
-.text-pass {
-	color: #9ccc65 !important;
-	text-transform: uppercase;
+.transparent-bg {
+	background-color:transparent !important;
 }
-.skip {
-	background: #64b5f6;
+.text-fail,.text-fatal {
+	color:#ff5722 !important;
+}
+.text-error {
+	color:#ff9800 !important;
+}
+.text-warning {
+	color:#ffc107 !important;
+}
+.text-info {
+	color:#00bcd4 !important;
 }
 .text-skip {
 	color: #64b5f6 !important;
-	text-transform: uppercase;
 }
-.text-skip {
-	color: #64b5f6;
+.text-pass {
+	color: #1c965b !important;
+}
+#status-col {
+	width: 60px;
+}
+.fail-bg, .fatal-bg,.avatar.fail,.avatar.fatal {
+	background: #e57373;
+}
+.pass-bg,.avatar.pass {
+	background: #9ccc65;
+}
+.skip-bg,.avatar.skip {
+	background: #64b5f6;
+}
+.error-bg,.avatar.skip {
+	background: #ffd54f;
 }
 .b-skip {
 	border-color: #64b5f6;
 }
-.error {
-	background: #ffd54f;
+.badge.status {
+	background: transparent !important;
+}
+.ficon {
+    margin-right: .3em;
+    padding: 3px 4px;
+    border-radius: 100%;
+    margin-top: 2px;
+    float: left;
+    margin-right: 10px;
+}
+.sticon > i {
+	position:relative;
+	left:3px;
+	bottom:3px;
+}
+.cicon {
+	border-radius: 100%;
+	padding: 2px 3px;
+	margin-right: 5px;
+	float: left;
+	margin-top: 8px;
+}
+.feature-status > i {
+	bottom: 2px;
+	position: relative;
 }
 
 /* Breakpoint MD */
@@ -170,17 +238,4 @@ body:not(.dark) .sn, body:not(.dark) .badge {
     .hidden-sm-down {
         display: none !important;
     } 
-}
-
-
-.scrollable {
-	
-}
-.scrollable > .list:hover {
-    position: absolute;
-    top: 3.5rem;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
 }

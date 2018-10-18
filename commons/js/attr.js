@@ -66,6 +66,10 @@ $(document).off("keyup").on("keyup", function() {
 	(el.is("#qc")) && $("#tcp tbody tr").q("#qc");
 });
 
+function changeTheme() {
+	$("body").toggleClass("dark");
+}
+
 $(window).keydown(function(e) {
 	var target = $(".attr.active:not(.d-none)");
 	var sibling = ".attr:not(.d-none):first";
@@ -76,16 +80,19 @@ $(window).keydown(function(e) {
 	if ($('input').is(':focus') || $('.featherlight').length > 0) {
 	} else {
 		if (!e.ctrlKey && !e.altKey && !e.shiftKey && e.which!==91 && e.which!==93 && e.which!==224) {
+			(e.which === 76) && changeTheme();
 			(e.which === 27) && toggleByStatus('clear');
+			(e.which === 68) && toggleByStatus('debug');
 			(e.which === 69) && toggleByStatus('error');
 			(e.which === 70) && toggleByStatus('fail');
 			(e.which === 80) && toggleByStatus('pass');
 			(e.which === 83) && toggleByStatus('skip');
+			(e.which === 84) && toggleByStatus('trace');
 			(e.which === 87) && toggleByStatus('warning');
 		}
 	}
 });
 
-$("#lightsout").click(function() {
+$("#lightsout,.lightsout").click(function() {
 	$("body").toggleClass("dark");
 });

@@ -48,36 +48,21 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 
 
-$(".lightsout").click(function() {
-	changeTheme();
-});
-
-function changeTheme() {
-	$("body").toggleClass("dark");
-}
-
 $(document).ready(function() {
-	$('[data-toggle="tooltip"]').tooltip({
-		html:true
-	});
-});
-
-$(document).off("keyup").on("keyup", function(evt) {
-	var el = evt.target;
-	($(el).is("#qt")) && $("tbody tr:not(.details)").q("#qt");
+				
 });
 
 function toggleByStatus(s) {
 	if (s==="clear") {
-		$("tr").removeClass("d-none");
+		$(".tsc,.test").removeClass("d-none");
 	} else {
-		$("tbody tr:not(.details)").addClass("d-none");
-		$("tbody tr:not(.details).s-" + s).removeClass("d-none");
+		$(".tsc").addClass("d-none");
+		$(".tsc[status=" + s + "]").removeClass("d-none");
 	}
 }
 
 $(window).keydown(function(e) {
-	if (!e.ctrlKey && !e.altKey && !e.shiftKey && e.which!==91 && e.which!==93 && e.which!==224) {
+	if (!$(e.target).is("#qt") && !e.ctrlKey && !e.altKey && !e.shiftKey && e.which!==91 && e.which!==93 && e.which!==224) {
 		(e.which === 76) && changeTheme();
 		(e.which === 27) && toggleByStatus('clear');
 		(e.which === 68) && toggleByStatus('debug');
@@ -85,31 +70,20 @@ $(window).keydown(function(e) {
 		(e.which === 70) && toggleByStatus('fail');
 		(e.which === 80) && toggleByStatus('pass');
 		(e.which === 83) && toggleByStatus('skip');
+		(e.which === 84) && toggleByStatus('trace');
 		(e.which === 87) && toggleByStatus('warning');
 	}
 });
 
-$(".f").click(function() {
+$(".tf").click(function() {
 	var s = $(this).attr("status");
 	toggleByStatus(s);
 });
 
-$("td").click(function() {
-	$(this).closest("tr").toggleClass("t");
-});
-
-$("#t-fail").click(function() {
-	$("tr:not(.details):not(.d-none)").toggleClass("t");
-})
-
 function attrToggle(t, attr) {
 	var e = t.text();
-	if (e.toLowerCase().indexOf("clear")>-1) {
-		toggleByStatus("clear");
-	} else {
-		$("tbody tr:not(.details)").addClass("d-none");
-		$("tbody tr:not(.details)[" + attr + "*=" + e + "]").removeClass("d-none");
-	}
+	$(".test").addClass("d-none");
+	$(".test[" + attr + "*=" + e + "]").removeClass("d-none");
 }
 $(".cf").click(function() {
 	attrToggle(jQuery(this), "tags");
@@ -117,10 +91,13 @@ $(".cf").click(function() {
 $(".df").click(function() {
 	attrToggle(jQuery(this), "devices");
 })
-$(".tf").click(function() {
-	var status = $(this).find("span").text().toLowerCase();
-	toggleByStatus(status);
-})
+
+function changeTheme() {
+	$("body").toggleClass("dark");
+}
+$(".lightsout").click(function() {
+	changeTheme();
+});
 
 $.fn.q = function(id){
 	var target = $(this);
@@ -128,13 +105,19 @@ $.fn.q = function(id){
 	searchBox.off('keyup').on('keyup', function() {
 		pattern = RegExp(searchBox.val(), 'gi');
 		if (searchBox.val() == '') {
-			target.removeClass('d-none');
+			target.removeClass('hide');
 		} else {
-			target.addClass('d-none').each(function() {
+			target.addClass('hide').each(function() {
 				var t = $(this);
-				(pattern.test(t.html())) && t.removeClass('d-none');
+				(pattern.test(t.html())) && t.removeClass('hide');
 			});
+			
 		}
 	});
 	return target;
 }
+
+$(document).off("keyup").on("keyup", function(evt) {
+	var el = evt.target;
+	($(el).is("#qt")) && $(".tsc").q("#qt");
+});
