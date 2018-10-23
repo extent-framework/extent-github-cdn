@@ -106,7 +106,7 @@ pre {
 	border: none;
 }
 .step {
-	margin-left: 10px;
+	padding-bottom: 10px;
 }
 .nav-link i:first-child {
 	margin-right: 5px;
@@ -156,9 +156,6 @@ body.dark .avatar {
 body:not(.dark) div.step {
 	color: #000;
 }
-div.step.pass,div.step.skip,div.step.fail,div.step.warning,div.step.error {
-	padding: 5px 15px;
-}
 .item-meta .badge {
     font-size: 10px;
 }
@@ -207,6 +204,9 @@ div.step.pass,div.step.skip,div.step.fail,div.step.warning,div.step.error {
 .badge.status {
 	background: transparent !important;
 }
+.sticon {
+	margin-right: .85rem;
+}
 .ficon {
     margin-right: .3em;
     padding: 3px 4px;
@@ -225,7 +225,7 @@ div.step.pass,div.step.skip,div.step.fail,div.step.warning,div.step.error {
 	padding: 2px 3px;
 	margin-right: 5px;
 	float: left;
-	margin-top: 8px;
+	margin-top: 5px;
 }
 .feature-status > i {
 	bottom: 2px;

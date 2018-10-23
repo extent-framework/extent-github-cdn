@@ -33,6 +33,9 @@ html.with-featherlight{overflow:hidden}.featherlight{display:none;position:fixed
 h6 {
 	font-size: 13px;
 }
+.bdd h6 {
+	font-size: 15px;
+}
 pre {
 	padding: .75rem;
 }
@@ -123,6 +126,12 @@ pre.d-none + .btn.st {
 	margin-bottom: 0 !important;
 	margin-left: 30px;
 	width: 98%;
+}
+.bdd div > .runtime-table {
+	margin-left: 0;
+}
+.bdd .tc > div > .category-list + h5 {
+	margin-top: 10px;
 }
 
 /*[bdd]*/
@@ -264,7 +273,10 @@ pre.d-none + .btn.st {
 	padding: 2px 3px;
 	margin-right: 5px;
 	float: left;
-	margin-top: 8px;
+	margin-top: 5px;
+}
+h6 .cicon {
+	margin-top: 2px;
 }
 
 /* Breakpoint MD */
