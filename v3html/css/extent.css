@@ -638,29 +638,38 @@ nav ul i {
         .bdd-report #step-filters { 
             display: none;
         }
-        .scenario, .background {
+        .scenario, .background, .scenariooutline {
             border: 1px solid #eee;
             padding: 20px;
             margin-top: 30px;
         }
+		.scenario pre {
+			background: transparent;
+			border: none;
+		}
+		.scenariooutline .node {
+			padding: 15px 30px;
+		}
+		.scenariooutline .steps {
+			margin-top: 20px;
+		}
         .background .category-list, .scenario .category-list {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             display: inline-block;
         }
         ul.steps {
-            border: 1px solid #eee;
             border-radius: 4px;
         }
         ul.steps > li {
             padding: 10px;
         }
-        ul.steps > .pass {
+        ul.steps > .pass:not(.scenario) {
             background: #b5d6a7;
         }
-        ul.steps > .fail {
+        ul.steps > .fail:not(.scenario) {
             background: #ff9a9a;
         }
-        ul.steps > .skip {
+        ul.steps > .skip:not(.scenario) {
             background: #cbdefb;
         }
         .scenario b {
