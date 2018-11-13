@@ -157,6 +157,15 @@ pre, .code-block {
     padding: 7px 10px;
     white-space: pre-wrap;
 }
+.dark pre, .dark .code-block {
+	background: transparent;
+	border: 1px solid #555;
+	color: rgba(180,200,220,.95) !important;
+}
+textarea {
+	resize: auto;
+	width: 100%;
+}
 .pre {
     border: none;
     white-space: pre;

@@ -364,6 +364,13 @@ $('.view-summary').click(function(evt) {
 	}
 });
 
+$(".subview-right").click(function(evt) {
+	var t = $(evt.target);
+	if (t.is("textarea") && !t.hasClass("maxxed")) {
+		t.addClass("maxxed").height((t.prop("scrollHeight")) + "px");
+	}
+})
+
 /* -- [ tests-toggle ] -- */
 $('#tests-toggle li').click(function() {
     var t = $(this),
