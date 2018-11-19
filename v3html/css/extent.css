@@ -118,7 +118,7 @@
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
-    border: solid rgba(80,80,80,1) 2px;
+    border: solid rgba(80,80,80,.5) 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.3);
