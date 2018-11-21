@@ -292,6 +292,10 @@ td {
 .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
     box-shadow: none;
 }
+span.badge {
+	float: none !important;
+	margin-left: 0;
+}
 
 /* -- [ dropdowns ] -- */
 .dropdown-content {
@@ -502,7 +506,7 @@ nav ul i {
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #eee;
         border-right: 1px solid #eee;
-        height: 180px;
+        height: 175px;
     }
     .test-content {
         padding-bottom: 100px;
@@ -585,10 +589,6 @@ nav ul i {
     .bdd + #step-filters {
         display: none;
     }
-    #step-filters i {
-        font-size: 18px;
-        cursor: pointer;
-    }
     .log > .status > i {
         font-size: 1rem;
     }
@@ -650,10 +650,13 @@ nav ul i {
         .bdd-report #step-filters { 
             display: none;
         }
+		.scenario-name, .scenario > .step-name {
+			font-size: 1.2rem;
+		}
         .scenario, .background, .scenariooutline {
             border: 1px solid #eee;
-            padding: 20px;
-            margin-top: 30px;
+            padding: 15px 20px 0;
+            margin-top: 20px;
         }
 		.scenario pre {
 			background: transparent;
@@ -669,21 +672,46 @@ nav ul i {
             margin-bottom: 10px;
             display: inline-block;
         }
+		.scenario-name > .status > i {
+			margin-right: .7rem !important;
+		}
         ul.steps {
             border-radius: 4px;
         }
-        ul.steps > li {
-            padding: 10px;
-        }
-        ul.steps > .pass:not(.scenario) {
-            background: #b5d6a7;
-        }
-        ul.steps > .fail:not(.scenario) {
-            background: #ff9a9a;
-        }
-        ul.steps > .skip:not(.scenario) {
-            background: #cbdefb;
-        }
+        ul.steps > li { 
+			padding: 10px 0;
+		}
+		ul.steps > li.given:first-child,ul.steps > li.when:first-child,ul.steps > li.then:first-child,ul.steps > li.but:first-child,ul.steps > li.and:first-child {
+			padding: 0 0 10px;
+		}
+		.node .status > i {
+			font-size: 1rem;
+			margin-right: 1rem;
+			vertical-align: sub;
+		}
+		.node-step {
+			margin-left: 2rem;
+		}
+		.scenario-name + div, .scenario-name + table {
+			margin-top: 1rem;
+		}
+		.bdd-test > .runtime-table, .node-step > .runtime-table {
+			width: auto;
+			border: 1px solid #d9d9d9;
+		}
+		.sr-filters:not(#step-filters) {
+			margin-top: -3rem;
+			float: right;
+		}
+        .sr-filters .btn-floating {
+			width: 24px;
+			height: 24px;
+			line-height: 24px;
+		}
+        .sr-filters .btn-floating i {
+			line-height: 24px;
+			font-size: 1rem;
+		}
         .scenario b {
             padding-right: 5px;
         }
@@ -762,29 +790,20 @@ body.dark, .dark .collapsible-header, .dark #search-tests {
 .dark .side-nav.fixed a, .dark pre, .dark .category, .dark .dropdown-content a, .dark .side-nav li>a>i {
     color: #bbb !important;
 }
-.dark pre, .dark #test-view-charts .card-panel, .dark .scenario, .dark .background, .dark ul.steps, .dark .collapsible > li {
-    border: 1px solid #494949 !important;
+.dark pre, .dark #test-view-charts .card-panel, .dark .scenario, .dark .background, .dark .scenariooutline, .dark .collapsible > li, .dark .bdd-test > .runtime-table, .dark .node-step > .runtime-table {
+    border: 1px solid #444 !important;
 }
 .dark .side-nav {
-    border-right: 1px solid #494949 !important;
+    border-right: 1px solid #444 !important;
 }
 .dark #test-collection li, .dark #category-collection li, .dark #exception-collection li, .dark #author-collection li, .dark th, .dark td, .dark .collapsible-body {
-    border-bottom: 1px solid #494949 !important;
+    border-bottom: 1px solid #444 !important;
 }
 .dark .subview-left {
-    border-right: 1px solid #494949 !important;
+    border-right: 1px solid #444 !important;
 }
 .dark #charts-row .card-panel {
     border: 1px solid #333 !important;
-}
-.dark ul.steps > .pass {
-    background: #5C9723;
-}
-.dark ul.steps > .fail {
-    background: #4F0000;
-}
-.dark ul.steps > .skip {
-    background: #075D90;
 }
 .dark .jstProperty {
 	color: #ccc;
