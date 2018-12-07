@@ -114,11 +114,15 @@
 /* -- [ structure ] -- */
 ::-webkit-scrollbar {
     background: transparent;
-    width: 10px;
+    width: 7px;
 }
 ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(80,80,80,.3) 1px;
+}
+.dark ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
-    border: solid rgba(80,80,80,.5) 2px;
+    border: solid rgba(100,100,100,.7) 1px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.3);
@@ -159,7 +163,7 @@ pre, .code-block {
 }
 .dark pre, .dark .code-block {
 	background: transparent;
-	border: 1px solid #555;
+	border: 1px solid rgba(120, 130, 140, 0.15) !important;
 	color: rgba(180,200,220,.95) !important;
 }
 textarea {
@@ -771,15 +775,18 @@ nav ul i {
 }
 
 /* -- [ theme, dark ] -- */
-body.dark, .dark .collapsible-header, .dark #search-tests {
-    background: #282d2f !important;
+body.dark, .dark .collapsible-header, .dark #search-tests, .dark .side-nav {
+    background: #19222d !important;
     color: #cfcfcf !important;
+}
+.dark .side-nav li.active {
+	background: #232e3d !important;
 }
 .dark nav {
     background: #000 !important;
 }
-.dark .grey.lighten-4, .dark .side-nav, .dark #test-collection li.active, .dark #category-collection li.active, .dark #exception-collection li.active, .dark #author-collection li.active, .dark .card-panel:not(.transparent), .dark .dropdown-content, .dark pre {
-    background: #212426 !important;
+.dark .grey.lighten-4, .dark #test-collection li.active, .dark #category-collection li.active, .dark #exception-collection li.active, .dark #author-collection li.active, .dark .card-panel:not(.transparent), .dark .dropdown-content, .dark pre {
+    background: #1e2835 !important;
 }
 .dark .category-list > .category, .dark .dropdown-content a:hover, .dark .divider {
     background: #444 !important;
@@ -791,13 +798,13 @@ body.dark, .dark .collapsible-header, .dark #search-tests {
     color: #bbb !important;
 }
 .dark pre, .dark #test-view-charts .card-panel, .dark .scenario, .dark .background, .dark .scenariooutline, .dark .collapsible > li, .dark .bdd-test > .runtime-table, .dark .node-step > .runtime-table {
-    border: 1px solid #444 !important;
+    border: 1px solid rgba(120, 130, 140, 0.16) !important;
 }
 .dark .side-nav {
-    border-right: 1px solid #444 !important;
+    border-right: 1px solid rgba(120, 130, 140, 0.15) !important;
 }
 .dark #test-collection li, .dark #category-collection li, .dark #exception-collection li, .dark #author-collection li, .dark th, .dark td, .dark .collapsible-body {
-    border-bottom: 1px solid #444 !important;
+    border-bottom: 1px solid rgba(120, 130, 140, 0.15) !important
 }
 .dark .subview-left {
     border-right: 1px solid #444 !important;
