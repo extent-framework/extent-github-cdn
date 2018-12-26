@@ -256,6 +256,9 @@ textarea {
 .error-bg,.avatar.skip {
 	background: #ffd54f;
 }
+.warn-bg,.avatar.warn,.warning-bg,.avatar.warning {
+	background: #ffc107;
+}
 .b-skip {
 	border-color: #64b5f6;
 }
