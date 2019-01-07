@@ -328,7 +328,7 @@ textarea {
 .dark .node {
 	color: #999;
 }
-.dark, .dark .table>thead>tr>th {
+.dark, .dark .table>thead>tr>th, .dark h1, .dark h2, .dark h3, .dark h4, .dark .font-weight-light, .dark .card-title, .dark .detail-head h4 {
 	color: #999;
 }
 
