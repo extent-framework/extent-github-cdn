@@ -289,6 +289,46 @@ textarea {
 	color: #ff66ff;
 }
 
+/* [dark theme] */
+.dark .header {
+	background-color: #08111c;
+}
+.dark .side-nav, .dark .test-list {
+	background-color: #19222d !important;
+	border-right: none;
+}
+.dark .test, .dark .test-list-tools, .dark .header {
+	border-bottom: 1px solid #19222d !important;
+}
+.dark .table>thead>tr>th, .dark .table>tbody>tr>td {
+	border-bottom: 1px solid #494949;
+}
+.dark .table>thead>tr>th, .dark .card-footer {
+	border-top: 1px solid #494949;
+}
+.dark .test.active, .dark .test:hover {
+	background-color: #19221c !important;
+}
+.dark .test-detail .name {
+	color: rgba(141,164,191,.95) !important;
+}
+.dark .avt-container, .dark .test-content, .dark.dashboard-view .container-fluid {
+	background-color: #243140;
+}
+.dark .card, .dark .attachments>li, .dark .badge-default {
+	color: rgba(141,164,191,.95) !important;
+	border: 1px solid #494949 !important;
+}
+.dark .card, .dark tr.bg-gray {
+	background-color: transparent !important;
+}
+.dark .file-icon {
+	border-right: 1px solid #494949 !important;
+}
+.dark .node {
+	color: #999;
+}
+
 /* media */
 @media only screen and (min-width: 992px) {
 	.avt-container .test-list {
