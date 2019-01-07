@@ -328,6 +328,9 @@ textarea {
 .dark .node {
 	color: #999;
 }
+.dark, .dark .table>thead>tr>th {
+	color: #999;
+}
 
 /* media */
 @media only screen and (min-width: 992px) {
