@@ -344,20 +344,19 @@ $(window).keydown(function(e) {
     if ($('input').is(':focus') || $('.featherlight').length > 0) {
     } else {
         function goToView(view) {
-            $(".nav-item").each(function() {
-				var t = $(this);
-				if (t.find(".title").first().text().indexOf(view)>=0) {
-				}
-			})
+			var href = $("#" + view).attr("href");
+			window.location.href = href;
         }
 
+		console.log(e.which)
         if (!e.ctrlKey && !e.altKey && !e.shiftKey && e.which!==91 && e.which!==93 && e.which!==224) {
-            (e.which === 65) && goToView('Author');
-            (e.which === 67) && goToView('Tag');
-            (e.which === 68) && goToView('Dashboard');
-            (e.which === 88) && goToView('Exception');
-            (e.which === 84) && goToView('Tests');
+            (e.which === 67) && goToView('nav-tag');
+            (e.which === 68) && goToView('nav-dashboard');
+            (e.which === 88) && goToView('nav-ex');
+            (e.which === 84) && goToView('nav-test');
 
+			(e.which === 76) && $("body").toggleClass("dark");
+			
             if ($(".test-view").length) {
                 (e.which === 27) && toggleByStatus('clear');
                 (e.which === 69) && toggleByStatus('error');
