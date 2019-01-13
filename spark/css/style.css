@@ -328,6 +328,55 @@ textarea {
 }
 
 
+/**
+ * Themes
+ *
+**/
+
+.dark .header {
+	background-color: #08111c;
+}
+.dark .side-nav, .dark .test-list {
+	background-color: #19222d !important;
+	border-right: none;
+}
+.dark .test-wrapper {
+	border: none;
+}
+.dark .test-item, .dark .test-list-tools, .dark .header {
+	border-bottom: 1px solid #19222d !important;
+}
+.dark .table>thead>tr>th, .dark .table>tbody>tr>td {
+	border-bottom: 1px solid #494949;
+}
+.dark .table>thead>tr>th, .dark .table>tbody>tr>td, .dark .card-footer, .dark td, .dark th {
+	border-top: 1px solid #494949;
+}
+.dark .test-item.active, .dark .test-item:hover {
+	background-color: #19221c !important;
+}
+.dark .test-detail .name {
+	color: rgba(141,164,191,.95) !important;
+}
+.dark .test-wrapper, .dark .test-content, .dark.dashboard-view .container-fluid {
+	background-color: #243140;
+}
+.dark .card, .dark .attachments>li, .dark .badge-default {
+	color: rgba(141,164,191,.95) !important;
+	border: 1px solid #494949 !important;
+}
+.dark .card, .dark tr.bg-gray, .dark .table, .dark table, dark tr, .dark th, .dark td, .dark .table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: transparent !important;
+}
+.dark .side-nav .side-nav-inner .side-nav-menu, .dark .file-icon {
+	border-right: 1px solid #494949 !important;
+}
+.dark .node {
+	color: #999;
+}
+.dark, .dark .table>thead>tr>th, .dark h1, .dark h2, .dark h3, .dark h4, .dark .font-weight-light, .dark .card-title, .dark .detail-head h4 {
+	color: #999;
+}
 .dark pre, .dark .code-block {
 	background: transparent;
 	border: 1px solid #555;
@@ -336,7 +385,7 @@ textarea {
 
 @media only screen and (min-width: 992px) {
 	.test-wrapper .test-list .test-list-wrapper {
-		height: calc(100vh - 112px);
+		height: calc(100vh - 106px);
 	}
 	.test-wrapper .test-list {
 		width: 32%;
