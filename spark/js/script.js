@@ -386,7 +386,6 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 /* -- [ test ] -- */ 
 $(".test-item").click(function() {
-	console.log("in")
 	$(".test-item").removeClass("active");
 	var content = $(this).addClass("active").find(".test-contents").clone();
 	$(".test-content-detail .detail-body").empty().append(content.removeClass("d-none"));
@@ -412,7 +411,6 @@ $(".test-content").click(function(evt) {
 /* ------------------------------------ */
 /* -- [ status filters ] -- */
 function toggleByStatus(status) {
-	console.log(status)
 	$(".test-item").removeClass("d-none");
 	if (status != "clear") {
 		$(".test-item[status!='" + status + "']").addClass("d-none");
