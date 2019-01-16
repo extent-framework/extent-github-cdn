@@ -225,6 +225,9 @@ textarea {
 .timestamp-col {
 	width: 110px;
 }
+img.r-img {
+	width: 5%;
+}
 
 /* nodes */
 .card > .accordion { 
