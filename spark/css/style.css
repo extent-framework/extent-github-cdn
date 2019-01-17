@@ -88,6 +88,20 @@ table > thead > tr > th {
 
 
 /**
+ * Sidenav
+ *
+**/
+.side-nav-controls {
+  position: absolute;
+  left: -15px;
+  bottom: 10px;
+}
+.side-nav-controls li {
+  list-style: none;
+}
+
+
+/**
  * Wrappers
  *
 **/

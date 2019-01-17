@@ -499,3 +499,7 @@ $(window).keydown(function(e) {
         }
     }
 });
+
+$(".lightsout").click(function() {
+	$("body").toggleClass("dark");
+});
