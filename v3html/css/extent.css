@@ -628,6 +628,13 @@ nav ul i {
         top: 2px;
         left: 4px;
     }
+	.device-list > .device:before {
+        font-family: 'material icons';
+        content: 'tablet';
+        position: absolute;
+        top: 2px;
+        left: 4px;
+    }
 	.category-name, .exception-name, .author-name {
  		max-width: 80%;
  		word-break: break-all;
