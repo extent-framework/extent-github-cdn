@@ -665,6 +665,9 @@ nav ul i {
 			padding-top: 5px;
 			padding-bottom: 5px;
 		}
+		.bdd-report ul.steps > li.scenario {
+			padding-top: 20px;
+		}
 		.scenario-name, .scenario > .step-name {
 			font-size: 1.2rem;
 		}
@@ -678,7 +681,7 @@ nav ul i {
 			border: none;
 		}
 		.scenariooutline .node {
-			padding: 15px 30px;
+			padding: 15px 20px;
 		}
 		.scenariooutline .steps {
 			margin-top: 20px;
