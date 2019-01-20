@@ -404,8 +404,8 @@ $(".test-content").click(function(evt) {
 	if (target.is(".node,.collapsed,.card-title")) {
 		target.closest(".card-header").next().toggleClass("collapse");
 	}
-	if (t.is("textarea") && !t.hasClass("maxxed")) {
-		t.addClass("maxxed").height((t.prop("scrollHeight")) + "px");
+	if (target.is("textarea") && !target.hasClass("maxxed")) {
+		target.addClass("maxxed").height((target.prop("scrollHeight")) + "px");
 	}
 });
 
