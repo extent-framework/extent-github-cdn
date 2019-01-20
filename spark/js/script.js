@@ -404,6 +404,9 @@ $(".test-content").click(function(evt) {
 	if (target.is(".node,.collapsed,.card-title")) {
 		target.closest(".card-header").next().toggleClass("collapse");
 	}
+	if (target.parent().is(".outline-child")) {
+		//target.closest(".card-header").nextSibling().toggleClass("d-none");
+	}
 });
 
 /* ------------------------------------ */
