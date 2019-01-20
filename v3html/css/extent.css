@@ -662,7 +662,8 @@ nav ul i {
             display: none;
         }
 		.bdd-report ul.steps > li {
-			padding: 5px 0;
+			padding-top: 5px;
+			padding-bottom: 5px;
 		}
 		.scenario-name, .scenario > .step-name {
 			font-size: 1.2rem;
