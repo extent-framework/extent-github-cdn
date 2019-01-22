@@ -525,7 +525,7 @@ nav ul i {
 	.node .category-list {
 		margin-top: 5px;
 	}
-	.category-list + .author-list {
+	.category-list + .author-list, .device-list {
  		margin-top: 5px;
  	}
     .subview-left .test-name, .node-name {
@@ -609,7 +609,6 @@ nav ul i {
         padding-left: 20px;
         margin-right: 2px;
         font-weight: 400;
-		background: 
     }
 	.category-list > .category {
 		cursor: pointer;
@@ -802,7 +801,7 @@ body.dark, .dark .collapsible-header, .dark #search-tests, .dark .side-nav {
 .dark .grey.lighten-4, .dark #test-collection li.active, .dark #category-collection li.active, .dark #exception-collection li.active, .dark #author-collection li.active, .dark .card-panel:not(.transparent), .dark .dropdown-content, .dark pre {
     background: #1e2835 !important;
 }
-.dark .category-list > .category, .dark .dropdown-content a:hover, .dark .divider {
+.dark .category-list > .category, .dark .author-list > .author, .dark .device-list > .device, .dark .dropdown-content a:hover, .dark .divider {
     background: #444 !important;
 }
 .dark .pre pre {
