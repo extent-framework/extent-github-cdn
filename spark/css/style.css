@@ -182,6 +182,7 @@ table > thead > tr > th {
 	font-size: 14px !important;
 	font-weight: 500;
 	word-break: break-all;
+	width: 80%;
 }
 
 /* bdd-report */
