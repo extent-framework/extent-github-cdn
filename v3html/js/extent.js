@@ -102,9 +102,12 @@ $(window).keydown(function(e) {
                 $('#tests-toggle li').filter(function() {
                     return ($(this).attr('status') == status)
                 }).click();
+				if (status == "clear") {
+					$("tr").removeClass("hide");
+				}
             }
 
-            if (currentView === 0) {
+            if (currentView === 0 || currentView == 1) {
                 (e.which === 27) && toggleByStatus('clear');
                 (e.which === 69) && toggleByStatus('error');
                 (e.which === 70) && toggleByStatus('fail');
@@ -378,6 +381,14 @@ $(".subview-right").click(function(evt) {
 			$(".subview-right .scenario[status='" + cls + "']").removeClass("hide");
 		}
 	}
+	/* -- [ category view, status toggle ] -- */
+	if (t.is(".category-status-counts > span")) {
+		var status = t.attr("status");
+		$(".subview-right .test-status").closest("tr").addClass("hide");
+		$(".subview-right .test-status." + status).filter(function() {
+			$(this).closest("tr").removeClass("hide");
+		});
+	}
 })
 
 /* -- [ tests-toggle ] -- */
@@ -417,7 +428,6 @@ $('#category-toggle li a').click(function() {
 $('#step-filters a').click(function() {
     var t = $(this),
         status = t.attr('status');
-		console.log(status)
     if (status == "clear") {
 		$(".subview-right .leaf").removeClass("hide");
 	} else {

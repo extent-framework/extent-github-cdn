@@ -750,6 +750,9 @@ nav ul i {
         color: #039be5;
         cursor: pointer;
     }
+	.category-status-counts > span {
+		cursor: pointer;
+	}
 
     /* -- [ dashboard-view ] -- */
     #dashboard-view .card-panel {
