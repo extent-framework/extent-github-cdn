@@ -185,6 +185,11 @@ table > thead > tr > th {
 	width: 80%;
 }
 
+/* attributes-view */
+.attributes-view .info > span {
+	cursor: pointer;
+}
+
 /* bdd-report */
 .bdd-report .accordion .status-avatar {
     right: 0;
