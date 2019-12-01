@@ -538,9 +538,10 @@ function drawParentChart() {
         },
         options: options
     };
-
-    var ctx = document.getElementById("child-analysis").getContext('2d');
-    drawChart(ctx, config);
+    if (document.getElementById("child-analysis")) {
+        var ctx = document.getElementById("child-analysis").getContext('2d');
+        drawChart(ctx, config);
+    }
 })();
 
 /* -- [ grand-children chart ] -- */
