@@ -240,13 +240,13 @@ function drawChart(ctx, config) {
                     datasets: [{
                         borderColor: 'transparent',
                         data: [
-                            statusGroup.passParent, statusGroup.failParent, statusGroup.fatalParent, statusGroup.errorParent, statusGroup.warningParent, statusGroup.skipParent
+                            statusGroup.passParent, statusGroup.failParent, statusGroup.warningParent, statusGroup.skipParent
                         ],
                         backgroundColor: [
-                            "#00af00", "#F7464A", "#8b0000", "#ff6347", "#FDB45C", "#ff9900"
+                            "#00af00", "#F7464A", "#FDB45C", "#ff9900"
                         ]
                     }],
-                    labels: [ "Pass", "Fail", "Fatal", "Error", "Warning", "Skip" ]
+                    labels: [ "Pass", "Fail", "Warning", "Skip" ]
                 },
                 options: options
             };
@@ -265,13 +265,13 @@ function drawChart(ctx, config) {
                 datasets: [{
                     borderColor: 'transparent',
                     data: [
-                        statusGroup.passChild, statusGroup.failChild, statusGroup.fatalChild, statusGroup.errorChild, statusGroup.warningChild, statusGroup.skipChild,statusGroup.infoChild
+                        statusGroup.passChild, statusGroup.failChild, statusGroup.warningChild, statusGroup.skipChild,statusGroup.infoChild
                     ],
                     backgroundColor: [
-                        "#00af00", "#F7464A", "#8b0000", "#ff6347", "#FDB45C", "#ff9900", "#46BFBD"
+                        "#00af00", "#F7464A", "#FDB45C", "#ff9900", "#46BFBD"
                     ]
                 }],
-                labels: [ "Pass", "Fail", "Fatal", "Error", "Warning", "Skip", "Info" ]
+                labels: [ "Pass", "Fail", "Warning", "Skip", "Info" ]
             },
             options: options
         };
@@ -290,13 +290,13 @@ function drawChart(ctx, config) {
                 datasets: [{
                     borderColor: 'transparent',
                     data: [
-                        statusGroup.passGrandChild, statusGroup.failGrandChild, statusGroup.fatalGrandChild, statusGroup.errorGrandChild, statusGroup.warningGrandChild, statusGroup.skipGrandChild, statusGroup.infoGrandChild
+                        statusGroup.passGrandChild, statusGroup.failGrandChild, statusGroup.warningGrandChild, statusGroup.skipGrandChild, statusGroup.infoGrandChild
                     ],
                     backgroundColor: [
-                        "#00af00", "#F7464A", "#8b0000", "#ff6347", "#FDB45C", "#ff9900", "#46BFBD"
+                        "#00af00", "#F7464A", "#FDB45C", "#ff9900", "#46BFBD"
                     ]
                 }],
-                labels: [ "Pass", "Fail", "Fatal", "Error", "Warning", "Skip", "Info" ]
+                labels: [ "Pass", "Fail", "Warning", "Skip", "Info" ]
             },
             options: options
         };
@@ -315,67 +315,18 @@ function drawChart(ctx, config) {
                 datasets: [{
                     borderColor: 'transparent',
                     data: [
-                        statusGroup.passEvents, statusGroup.failEvents, statusGroup.fatalEvents, statusGroup.errorEvents, statusGroup.warningEvents, statusGroup.skipEvents, statusGroup.infoEvents
+                        statusGroup.passEvents, statusGroup.failEvents, statusGroup.warningEvents, statusGroup.skipEvents, statusGroup.infoEvents
                     ],
                     backgroundColor: [
-                        "#00af00", "#F7464A", "#8b0000", "#ff6347", "#FDB45C", "#ff9900", "#46BFBD"
+                        "#00af00", "#F7464A", "#FDB45C", "#ff9900", "#46BFBD"
                     ]
                 }],
-                labels: [ "Pass", "Fail", "Fatal", "Error", "Warning", "Skip", "Info" ]
+                labels: [ "Pass", "Fail", "Warning", "Skip", "Info" ]
             },
             options: options
         };
 
         var ctx = document.getElementById("events-analysis").getContext('2d');
         drawChart(ctx, config);
-    }
-})();
-
-
-/* -- [ timeline ] -- */
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-(function drawTimelineChart() {
-    if (typeof timeline !== "undefined") {
-        var datasets = [];
-        for (var key in timeline) {
-            datasets.push({ label:key, data:[timeline[key]], backgroundColor: getRandomColor(), borderWidth: 1 });
-        }
-        var ctx = document.getElementById('timeline').getContext('2d');
-
-        new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                datasets: datasets
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                tooltips: {
-                    mode: 'point'
-                },
-                scales: {
-                    xAxes: [{
-                        stacked: true,
-                        gridLines: false
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        gridLines: false,
-                        barThickness: 25
-                    }]
-                },
-                legend: {
-                    display: false
-                }
-            }
-        });
     }
 })();
