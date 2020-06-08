@@ -66,11 +66,11 @@ $(".test-item").click(function() {
 
 $(document).ready(function() {
 	if ($(".test-item").length) {
-		$(".test-item").get(0).click();
+		$(".test-item").first().click();
 	}
 	
 	// SPA only: hide all views except test on document load
-	$(".spa .dashboard-view,.spa .tag-view,.spa .exception-view").addClass("d-none");
+	$(".main-content > .view").addClass("d-none").first().removeClass("d-none");
 	
 	// remove links for spa page
 	// this prevents invalid navigation to external html files
@@ -96,6 +96,19 @@ $(".test-content").click(function(evt) {
 		$(".test-content .tag-test-status[status=" + status + "]").removeClass("d-none");
 	}
 });
+
+/* -- [ attr ] -- */ 
+$('.test-content').click(function(evt) {
+	var t = $(evt.target);
+	if (t.is('.linked')) {
+		var testId = t.attr('test-id');
+		$('#nav-test').click();
+		$('.test-item').filter(function() {
+			return $(this).attr('test-id') == testId;
+		}).click();
+	}
+});
+
 
 /* ------------------------------------ */
 /* filters */
@@ -182,11 +195,19 @@ $(window).keydown(function(e) {
     if ($('input').is(':focus') || $('.featherlight').length > 0) {
     } else {
         function goToView(view) {
-			var href = $("#" + view).attr("href");
-			window.location.href = href;
+			$("#" + view).click();
         }
-
+		function moveVert(dir) {
+			if (dir === 'up')
+				$('.test-item.active')
+		}
+		var target = $(".test-item.active");
+		var sibling = $(".test-item:not(.d-none)");
         if (!e.ctrlKey && !e.altKey && !e.shiftKey && e.which!==91 && e.which!==93 && e.which!==224 && !e.metaKey && !e.which != 17) {
+			if (target !== null) {
+                (e.which === 40) && target.nextAll(sibling).first().click();
+                (e.which === 38) && target.prevAll(sibling).first().click();
+            }
             (e.which === 67) && goToView('nav-tag');
             (e.which === 68) && goToView('nav-dashboard');
             (e.which === 88) && goToView('nav-ex');
