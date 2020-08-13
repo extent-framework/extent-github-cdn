@@ -204,11 +204,6 @@ img {
     position: relative;
     right: 20px;    
 }
-.node-time {
-	float: right;
-    margin-top: 1.2rem;
-    margin-right: 2rem;
-}
 .badge.log {
     font-size: 85%;
     padding: 2px 5px;
@@ -370,6 +365,7 @@ textarea {
 .node-attr {
     padding: .75rem;
     margin-top: -.5rem;
+    padding-left: .7rem;
     padding-top: 0;
 } 
 .node-attr > .badge { 
