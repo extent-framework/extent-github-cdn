@@ -204,6 +204,11 @@ img {
     position: relative;
     right: 20px;    
 }
+.node-time {
+	float: right;
+    margin-top: 1.2rem;
+    margin-right: 2rem;
+}
 .badge.log {
     font-size: 85%;
     padding: 2px 5px;
