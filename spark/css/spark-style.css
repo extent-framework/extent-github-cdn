@@ -405,7 +405,7 @@ textarea {
 .text-skip {
     color: #64b5f6 !important;
 }
-.text-pass {
+.text-pass, .test-success {
     color: #1c965b !important;
 }
 .info-bg {
@@ -417,10 +417,10 @@ textarea {
 .step.fail-bg {
     background-color: rgba(229,115,115,.5);
 }
-.pass-bg,.avatar.pass {
+.pass-bg,.avatar.pass,.success-bg,.avatar.success {
     background-color: #9ccc65;
 }
-.step.pass-bg {
+.step.pass-bg,.step.success-bg {
     background-color: rgba(156,204,101,.5);
 }
 .skip-bg,.avatar.skip {
