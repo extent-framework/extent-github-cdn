@@ -94,16 +94,30 @@ $(document).ready(function() {
 	hashChangeOrLoad();
 });
 
+/* -- [ current test view/content ] -- */ 
 $(".test-content").click(function(evt) {
+	var tc = $(this);
 	var target = $(evt.target);
 	if (target.is(".card-header")) {
 		target.next().toggleClass("collapse")
 	}
-	if (target.is(".node,.collapsed,.card-title")) {
-		target.closest(".card-header").next().toggleClass("collapse");
+	if (target.is(".card-title, .card-title *")) {
+		var ch = target.closest(".card-header");
+		ch.find(".node").toggleClass("collapsed");
+		ch.next().toggleClass("collapse");
 	}
 	if (target.is("textarea") && !target.hasClass("maxxed")) {
 		target.addClass("maxxed").height((target.prop("scrollHeight") - 8) + "px");
+	}
+	
+	/* -- [ expand/collapse all tests in view ] -- */ 
+	if (target.is(".et, .et *")) {
+		tc.find(".node").removeClass("collapsed");
+		tc.find(".card-header").next().removeClass("collapse");
+	}
+	if (target.is(".ct, .ct *")) {
+		tc.find(".node").addClass("collapsed");
+		tc.find(".card-header").next().addClass("collapse");
 	}
 	
 	/* -- [ category view, status filters ] -- */
