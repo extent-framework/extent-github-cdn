@@ -53,6 +53,14 @@ $(".test-item").click(function() {
 	$(".test-item").removeClass("active");
 	var content = $(this).addClass("active").find(".test-contents").clone();
 	$(".test-content-detail .detail-body").empty().append(content.removeClass("d-none"));
+	
+	/* -- [ dynamically add base64 strings ] -- */ 
+	// this is done to preserve space by avoiding double base64 writes to
+	// the image itself, and the other for lightbox
+	$(".test-content").find(".base64-img").each(function() {
+		var t = $(this);
+		t.children().attr("src", t.attr("href"));
+	});
 });
 
 function hashChangeOrLoad() {

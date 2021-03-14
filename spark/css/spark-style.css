@@ -189,18 +189,12 @@ img {
 .test-detail .meta {
     float: right;
 }
-.node-time {
+.node-meta {
     float: right;
-    margin-top: 1.2rem;
-    margin-right: 2rem;
-}
-.node-time .badge { 
-    padding: 2px 7px;
-}
-.node-status {
-    top: 19px;
+    max-width: 15%;
+    top: 20px;
+    right: 20px;
     position: relative;
-    right: 20px;    
 }
 .badge.log {
     font-size: 85%;
