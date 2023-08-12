@@ -50,14 +50,31 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 
 /* -- [ test ] -- */ 
 $(".test-item").click(function() {
+    errors = [];
+    errorIdx = 0;
+
+    var t = $(this);
 	$(".test-item").removeClass("active");
 	var content = $(this).addClass("active").find(".test-contents").clone();
 	$(".test-content-detail .detail-body").empty().append(content.removeClass("d-none"));
 	
+    /* -- [ show/hide expand/collapse all tests in view ] -- */ 
+    $('.ct, .et').removeClass('d-none');
+    if (!t.find('.node').length > 0) {
+        $('.ct, .et').addClass('d-none');
+    }
+
+    /* -- [ hide next error navi if no errors present ] -- */ 
+    if (t.attr("status") == "pass") {
+        $(".ne").addClass("d-none");
+    } else {
+        $(".ne").removeClass("d-none");
+    }
+
 	/* -- [ dynamically add base64 strings ] -- */ 
 	// this is done to preserve space by avoiding double base64 writes to
 	// the image itself, and the other for lightbox
-	$(".test-content").find(".base64-img").each(function() {
+	$(".test-content").scrollTop(0).find(".base64-img").each(function() {
 		var t = $(this);
 		t.children().attr("src", t.attr("href"));
 	});
@@ -102,6 +119,9 @@ $(document).ready(function() {
 	hashChangeOrLoad();
 });
 
+var errors = [];
+var errorIdx = 0;
+
 /* -- [ current test view/content ] -- */ 
 $(".test-content").click(function(evt) {
 	var tc = $(this);
@@ -128,25 +148,28 @@ $(".test-content").click(function(evt) {
 		tc.find(".card-header").next().addClass("collapse");
 	}
 	
+    /* -- [ navigate to next error ] -- */
+    if (target.is(".ne, .ne *")) {
+        if (!errors.length) {
+            $(tc).find(".log.fail-bg, .log.error-bg").each(function(idx, el) {
+                errors.push($(el).offset().top);
+            });
+        }
+        errorIdx = errorIdx >= errors.length ? 0 : errorIdx;
+        tc.animate({
+            scrollTop: errors[errorIdx++] - 60
+        }, 200);
+    }
+
 	/* -- [ category view, status filters ] -- */
 	if (target.is(".attributes-view .info > span")) {
 		var status = target.attr("status");
 		$(".test-content .tag-test-status").addClass("d-none");
 		$(".test-content .tag-test-status[status=" + status + "]").removeClass("d-none");
 	}
-	
-	if (target.is('.uri-anchor')) {
-		var url = window.location.href;
-		if (url.indexOf('#') > 0)
-			url = url.split('#')[0];
-		window.location = url + $(target).text();
-	}
-});
 
-/* -- [ attr ] -- */ 
-$('.test-content').click(function(evt) {
-	var t = $(evt.target);
-	if (t.is('.linked')) {
+    /* -- [ attr view ] -- */ 
+    if (target.is('.linked')) {
 		var testId = t.attr('test-id');
 		var id = t.attr('id');
 		$('#nav-test').click();
@@ -163,6 +186,13 @@ $('.test-content').click(function(evt) {
 				card.removeClass('border-dark');
 			}, 1000);
 		}, 200);
+	}
+	
+	if (target.is('.uri-anchor')) {
+		var url = window.location.href;
+		if (url.indexOf('#') > 0)
+			url = url.split('#')[0];
+		window.location = url + $(target).text();
 	}
 });
 

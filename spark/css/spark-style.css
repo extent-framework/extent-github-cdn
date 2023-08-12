@@ -209,6 +209,12 @@ img {
     color: #f6f7f6;
     letter-spacing:-0.5px;
 }
+.ne {
+    position:fixed;
+    right: 79px;
+    top: 108px;
+    z-index: 999;
+}
 
 /* attributes-view */
 .attributes-view .info > span {
