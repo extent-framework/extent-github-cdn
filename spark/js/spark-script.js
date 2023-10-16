@@ -177,7 +177,6 @@ $(".test-content").click(function(evt) {
 	}
 });
 
-
 /* -- [ attr view ] -- */ 
 $('.test-content').click(function(evt) {
 	var t = $(evt.target);
@@ -199,7 +198,7 @@ $('.test-content').click(function(evt) {
             }, 1000);
         }, 200
     }
-}
+});
 
 /* ------------------------------------ */
 /* filters */
