@@ -59,13 +59,14 @@ $(".test-item").click(function() {
 	$(".test-content-detail .detail-body").empty().append(content.removeClass("d-none"));
 	
     /* -- [ show/hide expand/collapse all tests in view ] -- */ 
-    $('.ct, .et').removeClass('d-none');
-    if (!t.find('.node').length > 0) {
+    if (t.find('.node').length == 0) {
         $('.ct, .et').addClass('d-none');
+    } else {
+        $('.ct, .et').removeClass('d-none');
     }
 
     /* -- [ hide next error navi if no errors present ] -- */ 
-    if (t.attr("status") == "pass") {
+    if (t.attr("status").toLowerCase() == "pass") {
         $(".ne").addClass("d-none");
     } else {
         $(".ne").removeClass("d-none");
