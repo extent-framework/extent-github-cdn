@@ -196,7 +196,7 @@ $('.test-content').click(function(evt) {
             setTimeout(function() {
                 card.removeClass('border-dark');
             }, 1000);
-        }, 200
+        }, 200);
     }
 });
 
