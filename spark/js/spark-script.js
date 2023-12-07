@@ -66,10 +66,12 @@ $(".test-item").click(function() {
     }
 
     /* -- [ hide next error navi if no errors present ] -- */ 
-    if (t.attr("status").toLowerCase() == "pass") {
-        $(".ne").addClass("d-none");
-    } else {
-        $(".ne").removeClass("d-none");
+    if (t.attr("status")) {
+        if (t.attr("status").toLowerCase() == "pass") {
+            $(".ne").addClass("d-none");
+        } else {
+            $(".ne").removeClass("d-none");
+        }
     }
 
 	/* -- [ dynamically add base64 strings ] -- */ 
