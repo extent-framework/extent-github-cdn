@@ -370,6 +370,7 @@ textarea {
 .node + .desc {
     padding-left: 1rem;
     padding-bottom: 1rem;
+    margin-top: -0.5rem;
 }
 .node-attr {
     padding: .75rem;
