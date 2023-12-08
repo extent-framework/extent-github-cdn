@@ -367,7 +367,7 @@ textarea {
     max-width: 85%;
     font-size: 14px;
 }
-.node + desc {
+.node + .desc {
     padding-left: 1rem;
     padding-bottom: 1rem;
 }
