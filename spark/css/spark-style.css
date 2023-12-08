@@ -362,10 +362,14 @@ textarea {
 }
 .node {
     display: inline-block;
-    padding: .75rem;
+    padding: 1rem;
     font-weight: 500;
     max-width: 85%;
     font-size: 14px;
+}
+.node + desc {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 .node-attr {
     padding: .75rem;
